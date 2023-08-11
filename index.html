@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link to socal media</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <section id="main-section">
+        <div class="share-profile">
+            <button type="button" class="viwe-model">...</button>
+        </div>
+
+        <div class="my-profile">
+            <div class="profile">
+                <img src="priyajeet.jpg" alt="profile">
+                <h3>@_jeet_code</h3>
+                <p>A professional front end developer from india.</p>
+            </div>
+
+            <div class="link-account">
+                <div>
+                    <a href="#">
+                        <i class="ri-twitter-line"></i>
+                        <p>Twitter</p></a>
+                        <button type="button">...</button>
+                </div>
+
+                <div>
+                    <a href="#">
+                        <i class="ri-user-line"></i>
+                        <p>Protfolio</p></a>
+                        <button type="button">...</button>
+                </div>
+
+                <div>
+                    <a href="#">
+                        <i class="ri-github-line"></i>
+                        <p>Github</p></a>
+                        <button type="button">...</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="socalmedia-icons">
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-twitter-x-line"></i></a>
+            <a href="#"><i class="ri-linkedin-line"></i></a>
+        </div>
+
+        <div class="cookies">
+            <button type="button">Cookie preferences</button>
+        </div>
+    </section>
+
+
+
+    <div class="main-conainer">
+        <div class="container">
+            <div class="share-link">
+                <span>Share Model</span>
+                <div class="close"><i class="ri-close-line"></i></div>
+            </div>
+            <div class="content">
+                <p>Share this link</p>
+                <div class="icons">
+                    <a href="https://www.whatsapp.com/" type="share-link" target="_self"><i
+                            class="ri-whatsapp-line"></i></a>
+                    <a href="https://www.instagram.com/" type="share-link" target="_self"><i
+                            class="ri-instagram-line"></i></a>
+                    <a href="https://www.twitter.com/" type="share-link" target="_self"><i
+                            class="ri-twitter-line"></i></a>
+                    <a href="https://www.snapchat.com/" type="share-link" target="_self"><i
+                            class="ri-snapchat-line"></i></a>
+                    <a href="https://www.telegram.com/" type="share-link" target="_self"><i
+                            class="ri-telegram-line"></i></a>
+                </div>
+                <p>Or copy link</p>
+                <div class="feild">
+                    <i class="fa-solid fa-link"></i>
+                    <input type="text" value="www.priyajeetmajhi.com">
+                    <button class="copy">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const viewBtn = document.querySelector(".viwe-model"),
+            popup = document.querySelector(".container"),
+            close = popup.querySelector(".close"),
+            field = popup.querySelector(".feild"),
+            input = field.querySelector("input"),
+            copy = field.querySelector(".copy");
+
+        viewBtn.onclick = () => {
+            popup.classList.toggle("show");
+        }
+
+        close.onclick = () => {
+            viewBtn.click();
+        }
+
+
+        copy.onclick = () => {
+            input.select(); //select input value
+            if (document.execCommand("copy")) { //if the selected text copy
+                field.classList.add("active");
+                copy.innerText = "Copied";
+                setTimeout(() => {
+                    window.getSelection().removeAllRanges(); //remove selection from document
+                    field.classList.remove("active");
+                    copy.innerText = "Copy";
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+
+</html>
