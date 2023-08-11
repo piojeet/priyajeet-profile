@@ -11,6 +11,8 @@ body {
     /* background-color: #b8a170; */
     color: #111;
     font-family: sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #main-section {
@@ -373,7 +375,7 @@ body {
     font-weight: 600;
 }
 
-@media only screen and (max-width: 325px) {
+@media only screen and (max-width: 330px) {
     .container {
         width: 100%;
 
